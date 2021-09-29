@@ -31,9 +31,12 @@ class Line:
         """
         normalize_coefficient = 1 / (self.__a ** 2 + self.__b ** 2) ** (1 / 2)
 
+        if self.__c > 0:
+            normalize_coefficient *= - 1
+
         self.__a *= normalize_coefficient
         self.__b *= normalize_coefficient
-        self.__c = self.__c * normalize_coefficient if self.__c < 0 else self.__c * (-normalize_coefficient)
+        self.__c *= normalize_coefficient
 
         return Line(a=self.__a, b=self.__b, c=self.__c)
 

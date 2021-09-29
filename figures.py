@@ -135,7 +135,7 @@ class Triangle(Figure):
                                                                    other_points[0][1],
                                                                    other_points[1][0],
                                                                    other_points[1][1]))
-                return ((point[0] + intersection_point[0]) ** 2 + (point[1] + intersection_point[1]) ** 2) ** (1 / 2)
+                return ((point[0] - intersection_point[0]) ** 2 + (point[1] - intersection_point[1]) ** 2) ** (1 / 2)
 
         # the line goes throw two sides of triangle
         new_points = []
